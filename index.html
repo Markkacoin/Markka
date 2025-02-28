@@ -4,105 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markka Coin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #121212;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar a {
+            color: white !important;
+        }
+        .jumbotron {
+            background-color: #007bff;
+            color: white;
             text-align: center;
+            padding: 100px 25px;
         }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .coin-container {
-            background-color: #1e1e1e;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-            width: 300px;
-            margin-bottom: 40px;
-        }
-
-        .coin-image {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
+        .jumbotron img {
+            max-width: 150px;
             margin-bottom: 20px;
         }
-
-        .value {
-            font-size: 2.5em;
-            font-weight: 600;
-            color: #ffcc00;
-        }
-
-        .social-links {
+        .card {
             margin-top: 20px;
         }
-
-        .social-links a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.2em;
-            margin: 0 15px;
-            transition: color 0.3s;
+        .card-header {
+            background-color: #007bff;
+            color: white;
         }
-
-        .social-links a:hover {
-            color: #ffcc00;
+        .iframe-container {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
         }
-
-        .footer {
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.9em;
-            color: #bbb;
+        iframe {
+            width: 100%;
+            height: 600px; /* Voit säätää korkeutta tarpeen mukaan */
+            border: none;
         }
     </style>
 </head>
 <body>
 
-    <h1>Markka Coin</h1>
-    
-    <div class="coin-container">
-        <img src="https://example.com/markka-coin-image.png" alt="Markka Coin" class="coin-image">
-        <div id="coin-value" class="value">Loading...</div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://instagram.com/markkacoin" target="_blank">Instagram</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://t.me/markkacoin" target="_blank">Telegram</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <img src="https://cdn4.cdn-telegram.org/file/DsgWxj6RY97eJ1G1I4vQ3IBjzOJ8eT50EGmUHfD7l3fvMwgIMnkwFtjPJHAh8pLJbgN3YkP2zZZYkFDgwW-F-gNYrqGnBHxjvbM5PKw3yRT8Hv80X0Q5DR5vnbN7ARlD3sPHk3N6s9N_pyAFRk4alnQtXwjqYBMCK1_1Yp38Z0ImE462LQxRPgNQhab_9HlGM-XLLGEySutLg7tms6yeTt1ndojLluSY0nF5C307TzFZaPRYe9r6qBeh0bW6iqbx5-MckjvA98FdULlbzYdemeuswxsTQyS9XrwgAjM-Kxx3Pgi7YPbVQrao92nr9a5d5fCHiKD4MBzUshwMFkGpbQ.jpg" alt="Markka Coin Logo" class="img-fluid">
+        <h1>Markka</h1>
+        <p>Suomen Kansan kryptovaluutta</p>
     </div>
 
-    <div class="social-links">
-        <a href="https://instagram.com/markkacoin" target="_blank">Instagram</a>
-        <a href="https://t.me/markkacoin" target="_blank">Telegram</a>
+    <!-- Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        
+                    </div>
+                    <div class="card-body">
+                        <div class="iframe-container">
+                            <iframe
+                                id="geckoterminal-embed"
+                                title="GeckoTerminal Embed"
+                                src="https://www.geckoterminal.com/solana/pools/5E2c6XYjmPDxEgtzACx4PhHqu3daAUvedrRiZXuXiHYC?embed=1&info=1&swaps=1&grayscale=0&light_chart=0&chart_type=price&resolution=1s"
+                                frameborder="0"
+                                allow="clipboard-write"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="footer">Markka Coin - Powered by You</div>
-
-    <script>
-        async function fetchCoinValue() {
-            try {
-                const response = await fetch('https://www.geckoterminal.com/solana/pools/5E2c6XYjmPDxEgtzACx4PhHqu3daAUvedrRiZXuXiHYC?utm_source=coingecko&utm_medium=referral&utm_campaign=searchresults');
-                const data = await response.json();
-                document.getElementById('coin-value').innerText = '€' + data['markka-coin'].eur;
-            } catch (error) {
-                document.getElementById('coin-value').innerText = 'Virhe ladattaessa arvoa';
-            }
-        }
-
-        setInterval(fetchCoinValue, 60000);
-        fetchCoinValue();
-    </script>
-
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
