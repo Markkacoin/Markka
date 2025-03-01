@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markan Valuuttaseuranta</title>
+    <title>Markka</title>
     <style>
         /* Yleinen tyyli */
         body {
@@ -24,17 +24,39 @@
             text-align: center;
         }
 
-        /* Otsikko */
-        h1 {
-            font-size: 3.5em;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 20px;
-            letter-spacing: -0.05em;
+        /* Markan kuva ja teksti */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
-        h1 span {
+        .markka-image {
+            width: 200px; /* Voit säätää kokoa tarpeen mukaan */
+        }
+
+        .markka-image img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5)); /* Lisää vihreä varjo */
+        }
+
+        .hero-text {
+            text-align: left;
+            max-width: 500px;
+        }
+
+        .hero-text h2 {
+            font-size: 2em;
             color: #00ff88;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+            color: #ffffff;
         }
 
         /* GeckoTerminal-embed */
@@ -159,8 +181,16 @@
     </div>
 
     <div class="container">
-        <!-- Otsikko -->
-        <h1>Markan <span>Valuuttaseuranta</span></h1>
+        <!-- Markan kuva ja teksti -->
+        <div class="hero-section">
+            <div class="markka-image">
+                <img src="https://www.dropbox.com/scl/fi/g3v7bkp2rmt9j9iyg7sh3/suomi-1996-1-markka-a-700x700-removebg-preview.png?rlkey=41io4x03wqjz5cyi8s8bu47ji&st=a14a96xi&dl=1" alt="Markan kuva">
+            </div>
+            <div class="hero-text">
+                <h2>Markka</h2>
+                <p>Digitaalisuuden voimalla kohti kasvua ja innovaatiota – sinun tarinasi, meidän teknologiamme.</p>
+            </div>
+        </div>
 
         <!-- GeckoTerminal-embed -->
         <div class="geckoterminal-embed">
@@ -191,7 +221,7 @@
 
     <!-- Alatunniste -->
     <footer>
-        &copy; 2023 Markan Valuuttaseuranta. Kaikki oikeudet pidätetään.
+        &copy; 2025 Markka. Kaikki oikeudet pidätetään.
     </footer>
 
     <!-- JavaScript Phantom-latauslinkkiä varten -->
