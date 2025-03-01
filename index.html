@@ -3,137 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markka Coin</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Markan Valuuttaseuranta</title>
     <style>
+        /* Yleinen tyyli */
         body {
-            background-color: #f8f9fa;
-            font-family: 'Roboto', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        h1, h2, h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-        }
-        .navbar {
-            background-color: #1a1a1a;
-        }
-        .navbar a {
-            color: white !important;
-        }
-        .jumbotron {
-            background: linear-gradient(135deg, #007bff, #00ff88);
-            color: white;
+
+        /* Pääkontti */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
             text-align: center;
-            padding: 100px 25px;
         }
-        .jumbotron img {
-            max-width: 150px;
+
+        /* Otsikko */
+        h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: #ffffff;
             margin-bottom: 20px;
+            letter-spacing: -0.05em;
         }
-        .card {
-            margin-top: 20px;
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        h1 span {
+            color: #00ff88;
         }
-        .card-header {
-            background-color: #1a1a1a;
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-        }
-        .iframe-container {
-            margin-top: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        iframe {
+
+        /* GeckoTerminal-embed */
+        .geckoterminal-embed {
             width: 100%;
-            height: 600px; /* Voit säätää korkeutta tarpeen mukaan */
-            border: none;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+            margin: 40px 0;
+            background-color: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+
+        /* Lisätietoa */
+        .info {
+            font-size: 1.2em;
+            color: #aaaaaa;
             margin-top: 20px;
         }
-        .social-links a img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s ease;
+
+        /* Nappulat */
+        .buttons {
+            margin-top: 40px;
         }
-        .social-links a:hover img {
-            transform: scale(1.2);
+
+        .buttons a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 15px 30px;
+            background-color: #00ff88;
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .buttons a:hover {
+            background-color: #00cc66;
+            transform: scale(1.05);
+        }
+
+        /* Alatunniste */
+        footer {
+            margin-top: 60px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        footer a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dropdown-valikko */
+        .dropdown {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            background-color: #00ff88;
+            color: #000000;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #00cc66;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #2c2c2c;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #ffffff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #00ff88;
+            color: #000000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">Markka Coin</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://instagram.com/markkacoin" target="_blank">Instagram</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://t.me/markkacoin" target="_blank">Telegram</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Jumbotron -->
-    <div class="jumbotron">
-        <img src="https://cdn4.cdn-telegram.org/file/DsgWxj6RY97eJ1G1I4vQ3IBjzOJ8eT50EGmUHfD7l3fvMwgIMnkwFtjPJHAh8pLJbgN3YkP2zZZYkFDgwW-F-gNYrqGnBHxjvbM5PKw3yRT8Hv80X0Q5DR5vnbN7ARlD3sPHk3N6s9N_pyAFRk4alnQtXwjqYBMCK1_1Yp38Z0ImE462LQxRPgNQhab_9HlGM-XLLGEySutLg7tms6yeTt1ndojLluSY0nF5C307TzFZaPRYe9r6qBeh0bW6iqbx5-MckjvA98FdULlbzYdemeuswxsTQyS9XrwgAjM-Kxx3Pgi7YPbVQrao92nr9a5d5fCHiKD4MBzUshwMFkGpbQ.jpg" alt="Markka Coin Logo" class="img-fluid">
-        <h1>Markka</h1>
-        <p>Suomen Kansan kryptovaluutta</p>
-        <div class="social-links">
-            <a href="https://instagram.com/markkacoin" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
-            </a>
-            <a href="https://t.me/markkacoin" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo">
-            </a>
+    <!-- Dropdown-valikko -->
+    <div class="dropdown">
+        <button class="dropdown-btn">Valikko</button>
+        <div class="dropdown-content">
+            <a href="tietoa-markasta.html">Tietoa Markasta</a>
+            <a href="miten-ostaa-markkaa.html">Miten ostaa Markkaa</a>
         </div>
     </div>
 
-    <!-- Content -->
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        Live-hinta ja kaavio
-                    </div>
-                    <div class="card-body">
-                        <div class="iframe-container">
-                            <iframe
-                                id="geckoterminal-embed"
-                                title="GeckoTerminal Embed"
-                                src="https://www.geckoterminal.com/solana/pools/5E2c6XYjmPDxEgtzACx4PhHqu3daAUvedrRiZXuXiHYC?embed=1&info=1&swaps=1&grayscale=0&light_chart=0&chart_type=price&resolution=1s"
-                                frameborder="0"
-                                allow="clipboard-write"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Otsikko -->
+        <h1>Markan <span>Valuuttaseuranta</span></h1>
+
+        <!-- GeckoTerminal-embed -->
+        <div class="geckoterminal-embed">
+            <iframe
+                height="100%"
+                width="100%"
+                id="geckoterminal-embed"
+                title="GeckoTerminal Embed"
+                src="https://www.geckoterminal.com/solana/pools/5E2c6XYjmPDxEgtzACx4PhHqu3daAUvedrRiZXuXiHYC?embed=1&info=1&swaps=1&grayscale=0&light_chart=0&chart_type=price&resolution=15m"
+                frameborder="0"
+                allow="clipboard-write"
+                allowfullscreen
+            ></iframe>
+        </div>
+
+        <!-- Lisätietoa -->
+        <p class="info">
+            Seuraa Markan valuutan arvoa reaaliajassa. Yksinkertainen, nopea ja luotettava.
+        </p>
+
+        <!-- Nappulat -->
+        <div class="buttons">
+            <a href="https://instagram.com/markkacoin" target="_blank">Instagram</a>
+            <a href="https://t.me/markkacoin" target="_blank">Telegram</a>
+            <a id="phantom-download" href="#" target="_blank">Lataa Phantom</a>
         </div>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Alatunniste -->
+    <footer>
+        &copy; 2023 Markan Valuuttaseuranta. Kaikki oikeudet pidätetään.
+    </footer>
+
+    <!-- JavaScript Phantom-latauslinkkiä varten -->
+    <script>
+        // Määritetään Phantom-lompakon latauslinkki käyttöjärjestelmän mukaan
+        const phantomLink = document.getElementById('phantom-download');
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/android/i.test(userAgent)) {
+            phantomLink.href = 'https://play.google.com/store/apps/details?id=app.phantom';
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            phantomLink.href = 'https://apps.apple.com/app/phantom-crypto-wallet/id1598432977';
+        } else {
+            phantomLink.href = 'https://phantom.app/download'; // Oletuslinkki
+        }
+    </script>
 </body>
 </html>
