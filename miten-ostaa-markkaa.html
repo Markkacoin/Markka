@@ -29,6 +29,25 @@
         a:hover {
             text-decoration: underline;
         }
+        .highlight {
+            background-color: #00ff88;
+            color: #000000;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .steps {
+            margin-left: 20px;
+        }
+        .steps li {
+            margin-bottom: 10px;
+        }
+        .explanation {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -37,15 +56,51 @@
         <p>
             Markan ostaminen on helppoa Phantom-lompakon avulla. Seuraa näitä ohjeita:
         </p>
-        <ol>
-            <li>Lataa Phantom-lompakko <a href="https://phantom.app/download" target="_blank">tästä</a>.</li>
-            <li>Luo uusi lompakko tai tuo olemassa oleva.</li>
-            <li>Osta SOL-tokenia (Solana) pörssistä, kuten <a href="https://www.binance.com" target="_blank">Binance</a> tai <a href="https://www.coinbase.com" target="_blank">Coinbase</a>.</li>
-            <li>Lähetä SOL-tokenit Phantom-lompakkoosi.</li>
-            <li>Käytä Phantom-lompakon sisäistä vaihtoa ostaaaksesi Markkaa SOL:lla.</li>
+        <ol class="steps">
+            <li>
+                <strong>Lataa Phantom:</strong>
+                <ul>
+                    <li>Lataa Phantom <a href="https://phantom.app/download" target="_blank">tästä</a>.</li>
+                    <li>Asenna sovellus ja luo uusi lompakko tai tuo olemassa oleva.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Osta SOL:ia suoraan Phantomissa:</strong>
+                <ul>
+                    <li>Avaa Phantom-sovellus.</li>
+                    <li>Valitse lompakkosi ja varmista, että Solana (SOL) on näkyvissä. (Sen pitäisi näkyä ensimmäisenä.)</li>
+                    <li>Valitse "Cash Buy"</li>
+                    <li>Valitse maksutapa (esim. pankkikortti tai Apple Pay) ja osta SOL:ia.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Miten hankkia Markkaa:</strong>
+                <ul>
+                    <li>Avaa Phantom-sovellus.</li>
+                    <li>Etsi oikean yläkulman <strong>suurennuslasi</strong>-kuvake ja napsauta sitä.</li>
+                    <li>Hae Markkaa syöttämällä token-osoite: <span class="highlight">3M5p1A9yuPeDeA5G7QXBPTCgicnpvFzoutXhQjfXUjhm</span>.</li>
+                    <li>Valitse "Swap".</li>
+                    <li>Valitse SOL lähtövaluutaksi ja Markka kohdevaluutaksi.</li>
+                    <li>Syötä vaihdettava määrä ja vahvista transaktio.</li>
+               
+                </ul>
+            </li>
         </ol>
+
+        <!-- Selitys SOL:in tarpeesta -->
+        <div class="explanation">
+            <h2>Miksi SOL:ia tarvitaan?</h2>
+            <p>
+                Solana (SOL) on Solana-lohkoketjun alkuperäinen kryptovaluutta, ja sitä tarvitaan kaikkien transaktioiden maksamiseen Solana-verkossa.
+                Kun ostat Markkaa, sinun täytyy käyttää SOL:ia kattamaan transaktiomaksut. Lisäksi Markkaa ostettaessa käytetään SOL:ia vaihtovaluuttana.
+            </p>
+            <p>
+                Phantom-lompakko tekee tästä prosessista helppoa, sillä voit ostaa SOL:ia suoraan sovelluksessa ja käyttää sitä Markan ostamiseen.
+            </p>
+        </div>
+
         <p>
-            Nyt sinulla on Markkaa, ja voit käyttää sitä erilaisiin tarkoituksiin, kuten kaupankäyntiin tai keräilyyn.
+            Nyt sinulla on Markkaa, ja voit käyttää sitä erilaisiin tarkoituksiin, kuten kaupankäyntiin tai yrityksen virallisena maksuvälineenä.
         </p>
         <p><a href="index.html">&larr; Takaisin etusivulle</a></p>
     </div>
